@@ -11,6 +11,7 @@ def hello():
            "<b>Container ID:</b> {hostname}<br/>" \
            "<img src={image} alt={image}>"
 
+    # Change the image URL to display your own unique image
     return html.format(name="Docker", hostname=socket.gethostname(), image='/static/head.jpg')
 
 if __name__ == "__main__":

@@ -66,6 +66,9 @@ ENV NAME FlaskBU
 CMD ["python", "app.py"]
 ```
 
+### Creating Flask App
+
+#### requirements.txt
 Our Dockerfile will try to install Python libraries from a `requirements.txt` file, so
 create a `requirements.txt` and just add the word `Flask` to the first line:
 
@@ -73,6 +76,37 @@ On Mac/Linux, just run:
 
 ```
 echo Flask > requirements.txt
+```
+
+#### app.py
+This is the Python code that utilizes the `Flask` library to ship a Web App super quickly and easily!
+Normally you would you need the right Python version installed to run someone else's code correctly, 
+and for a Flask App you would need to install `Flask` using a package manager like `pip`, but `pip` would
+have to be the correct version to install the correct version of `Flask` and so on...
+
+Docker gets rid of all that version handling and packages everything into a Container that will work the same
+way for everyone's computers.
+
+`app.py` should contain:
+
+```
+import os
+import socket
+
+from flask import Flask
+
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    html = "<h3>Hello {name}!</h3>" \
+           "<b>Container ID:</b> {hostname}<br/>" \
+           "<img src={image} alt={image}>"
+
+    return html.format(name="Docker", hostname=socket.gethostname(), image='/static/head.jpg')
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=80)
 ```
 
 ### Building Container

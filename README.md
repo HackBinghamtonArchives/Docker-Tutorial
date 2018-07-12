@@ -1,8 +1,6 @@
 # Flask example using Docker
 ![alt](http://1000logos.net/wp-content/uploads/2017/07/Docker-Logo-500x148.png)
 
-![alt](https://ih1.redbubble.net/image.323360588.0061/sticker,375x360-bg,ffffff.u1.png)
-
 This repository is to demonstrate how to create, run, and publish a Docker App. Currently, there
 is an example for putting a Flask Web App into a Docker Container, making it runnable from any
 computer with Docker regardless of system, environment, libraries, etc.

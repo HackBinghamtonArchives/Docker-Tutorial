@@ -1,6 +1,6 @@
 ![alt](http://1000logos.net/wp-content/uploads/2017/07/Docker-Logo-500x148.png)
 
-![alt](http://flask.pocoo.org/static/logo/flask.png)
+![alt](https://cdn.freebiesupply.com/logos/thumbs/2x/flask-logo.png)
 
 # Flask example using Docker
 This repository is to demonstrate how to create, run, and publish a Docker App. Currently, there

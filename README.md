@@ -109,6 +109,9 @@ if __name__ == "__main__":
     app.run(host='0.0.0.0', port=80)
 ```
 
+Make sure you create a `static` directory containing the image of your choice to be displayed
+on your flask app. I have chosen `head.jpg` for example, and placed it in the `static/` directory.
+
 ### Building Container
 We need to "build" the docker container to put everything together
 ```

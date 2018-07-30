@@ -14,7 +14,7 @@ Taken straight from their website:
 Visit this page: [https://docs.docker.com/install/](https://docs.docker.com/install/)
 
 ### Avoiding Root Privelige Issues (Mac/Linux)
-```
+```bash
 # Create a docker user group
 sudo groupadd docker
 # Add yourself to the user group
@@ -27,13 +27,13 @@ If you don't want docker to have root privelige by default, just add `sudo` befo
 every `docker` command for the rest of this tutorial.
 
 ### Testing your Docker Install
-```
+```bash
 docker run hello-world
 ```
 
 ### Run my docker app anywhere
 Here is an example of running a Docker app I created from anywhere without any environment setup:
-```
+```bash
 docker run -p 80:80 rmccorm4/flask_example:latest
 ```
 
@@ -76,7 +76,7 @@ create a `requirements.txt` and just add the word `Flask` to the first line:
 
 On Mac/Linux, just run:
 
-```
+```bash
 echo Flask > requirements.txt
 ```
 
@@ -91,7 +91,7 @@ way for everyone's computers.
 
 `app.py` should contain:
 
-```
+```python
 import os
 import socket
 
@@ -116,14 +116,14 @@ on your flask app. I have chosen `head.jpg` for example, and placed it in the `s
 
 ### Building Container
 We need to "build" the docker container to put everything together
-```
+```bash
 # Creates an image named hello
 docker build -t FlaskBU .
 ```
 
 ### Running Container
 We're going to run our container to make sure it worked correctly:
-```
+```bash
 # Run your local image
 docker run -p 80:80 FlaskBU
 ```
@@ -137,16 +137,16 @@ Go to this website to create a Docker account so you can publish your Docker con
 [https://hub.docker.com/login](https://hub.docker.com/login)
 
 #### Login to Docker Account
-```
+```bash
 docker login
 ```
 
 #### Push to a Repository
-```
+```bash
 docker push YOUR_USERNAME/FlaskBU:latest
 ```
 
 ### Running your Published Container
-```
+```bash
 docker run -p 80:80 YOUR_USERNAME/FlaskBU:latest
 ```
